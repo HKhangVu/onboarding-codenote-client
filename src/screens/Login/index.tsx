@@ -7,10 +7,19 @@ import LoaderButton from '../../components/LoaderButton';
 import { userHasAuthenticated } from '../../actions/authenticate';
 import "./index.css";
 
-class Login extends Component {
-  constructor(props) {
-    super(props);
+interface INnewStates {
+  email: string,
+  password: string,
+  isLoading: boolean
+}
 
+interface INewProps {
+  userHasAuthenticated:(boolean) => void
+}
+
+class Login extends Component<INewProps,INnewStates> {
+  constructor(props) {
+    super(props); 
     this.state = {
       email: "",
       password: "",
@@ -25,7 +34,7 @@ class Login extends Component {
   handleChange = event => {
     this.setState({
       [event.target.id]: event.target.value
-    });
+    } as INnewStates);
   }
 
   handleSubmit = async event => {
@@ -37,6 +46,7 @@ class Login extends Component {
       await Auth.signIn(this.state.email, this.state.password);
       this.props.userHasAuthenticated(true);
     } catch (e) {
+      console.log("pass")
       alert(e.message);
       this.setState({ isLoading: false });
     }
@@ -80,7 +90,7 @@ class Login extends Component {
 
 const mapDispatchToProps = (dispatch) => bindActionCreators(
   {
-    userHasAuthenticated,
+    userHasAuthenticated
   },
   dispatch
 );

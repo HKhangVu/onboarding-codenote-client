@@ -15,7 +15,7 @@ const ScreensRoot = () => (
   <Fragment>
     <AppliedRoute component={Navigation} />
     <Switch>
-      <AppliedRoute exact path="/" component={Home} />
+      <AppliedRoute path="/" exact component={Home} />
       <UnauthenticatedRoute path="/signup" exact component={Signup} />
       <UnauthenticatedRoute path="/login" exact component={Login} />
       <AuthenticatedRoute path="/notes/new" exact component={NewNote} />
