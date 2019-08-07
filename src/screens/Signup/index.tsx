@@ -9,7 +9,16 @@ import { Auth } from 'aws-amplify';
 import LoaderButton from '../../components/LoaderButton';
 import "./index.css";
 
-class Signup extends Component {
+interface INewState {
+  isLoading: boolean,
+  email: string,
+  password: string,
+  confirmPassword: string,
+  confirmationCode: string,
+  newUser: null|Object,
+}
+
+class Signup extends Component <any,INewState> {
   constructor(props) {
     super(props);
 
@@ -38,7 +47,7 @@ class Signup extends Component {
   handleChange = event => {
     this.setState({
       [event.target.id]: event.target.value
-    });
+    }as INewState);
   }
 
   handleSubmit = async event => {

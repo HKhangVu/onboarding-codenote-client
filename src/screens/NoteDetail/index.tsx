@@ -5,8 +5,27 @@ import './index.css';
 import LoaderButton from '../../components/LoaderButton';
 import config from '../../config';
 import { s3Upload } from '../../libs/awsLib';
+import { History } from "history"
 
-class NoteDetail extends Component {
+interface INewStates {
+  isLoading: boolean,
+  isDeleting: boolean,
+  note: any,
+  content: string,
+  attachmentURL: string,
+}
+
+interface INewProps {
+  match: {
+    params: {
+      id:string,
+    }
+  }
+  history: History
+}
+
+class NoteDetail extends Component <INewProps,INewStates>{
+  file:File;
   constructor(props) {
     super(props);
 
@@ -42,7 +61,7 @@ class NoteDetail extends Component {
   }
 
   getNote() {
-    return API.get("notes", `/notes/${this.props.match.params.id}`);
+    return API.get("notes", `/notes/${this.props.match.params.id}`,{});
   }
 
   saveNote(note) {
@@ -52,7 +71,7 @@ class NoteDetail extends Component {
   }
 
   deleteNote() {
-    return API.del('notes', `/notes/${this.props.match.params.id}`);
+    return API.del('notes', `/notes/${this.props.match.params.id}`,{});
   }
 
   validateForm() {
@@ -66,7 +85,7 @@ class NoteDetail extends Component {
   handleChange = event => {
     this.setState({
       [event.target.id]: event.target.value
-    });
+    }as INewStates);
   }
 
   handleFileChange = event => {

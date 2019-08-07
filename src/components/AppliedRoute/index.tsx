@@ -1,7 +1,23 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-const AppliedRoute = ({ component: C, props: cProps, ...rest }) =>
-  <Route {...rest} render={ props => <C {...props} {...cProps} /> } />;
+interface INewProps {
+  component: any,
+  props?:any,
+  [id:string]:any,
+}
 
-export default AppliedRoute;
+const AppliedRoute = ({ component: C, props: cProps, ...rest }:INewProps) => {
+  return (
+    <Route {...rest} 
+    render={props => {
+      return (
+        <C {...props} {...cProps} />
+      );
+    }} 
+    />
+  );
+}
+  
+
+export default (AppliedRoute);

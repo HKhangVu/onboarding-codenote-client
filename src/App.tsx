@@ -7,8 +7,18 @@ import logo from './logo.svg';
 import './App.css';
 import { userHasAuthenticated } from './actions/authenticate';
 import ScreensRoot from './screens/Root';
+import {History} from "history";
 
-class App extends Component {
+interface INewStates  {
+  isAuthenticating: boolean
+}
+
+interface INewProps {
+  userHasAuthenticated:(boolean) => void,
+  history:History
+}
+
+class App extends Component <INewProps,INewStates> {
   constructor(props) {
     super(props);
 

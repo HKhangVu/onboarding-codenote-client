@@ -1,10 +1,11 @@
-import { Storage } from 'aws-amplify';
+import {Storage} from 'aws-amplify';
 
+// eslint-disable-next-line require-jsdoc
 export async function s3Upload(file) {
   const filename = `${Date.now()}-${file.name}`;
 
   const stored = await Storage.vault.put(filename, file, {
-    contentType: file.type
+    contentType: file.type,
   });
 
   return stored.key;

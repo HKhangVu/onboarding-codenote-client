@@ -7,13 +7,28 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { userHasAuthenticated } from '../../actions/authenticate';
 import "./index.css";
 
-class Home extends Component {
+interface INoteElement {
+  noteId: string,
+  content: string,
+  createdAt: string,
+}
+
+interface INewStates {
+  isLoading: boolean,
+  notes: INoteElement[],
+}
+
+interface INewProps {
+  isAuthenticated:boolean
+}
+
+class Home extends Component <INewProps,INewStates> {
   constructor(props) {
     super(props);
 
     this.state = {
       isLoading: true,
-      notes: []
+      notes:[]
     };
   }
 
@@ -26,6 +41,7 @@ class Home extends Component {
       const notes = await this.notes();
       this.setState({ notes });
     } catch(e) {
+
       alert(e);
     }
 
@@ -33,11 +49,11 @@ class Home extends Component {
   }
 
   notes() {
-    return API.get("notes", "/notes");
+    return API.get("notes", "/notes",null);
   }
 
   renderNotesList(notes) {
-    return [{}].concat(notes).map(
+    return [{} as INoteElement].concat(notes).map(
       (note, i) =>
         i !== 0
           ? <LinkContainer

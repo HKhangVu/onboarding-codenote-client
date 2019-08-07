@@ -6,18 +6,23 @@ import { s3Upload } from '../../libs/awsLib'
 import config from "../../config";
 import "./index.css";
 
-export default class NewNote extends Component {
+type INewState = {
+  isLoading: boolean,
+  content: string,
+}
+
+export default class NewNote extends Component<any,INewState> {
+  
+  file:File;
   constructor(props) {
-    super(props);
-
-    this.file = null;
-
+    super(props); 
     this.state = {
       isLoading: null,
       content: ""
     };
+    this.file = null;
   }
-
+  
   validateForm() {
     return this.state.content.length > 0;
   }
@@ -25,7 +30,7 @@ export default class NewNote extends Component {
   handleChange = event => {
     this.setState({
       [event.target.id]: event.target.value
-    });
+    } as INewState);
   }
 
   handleFileChange = event => {
