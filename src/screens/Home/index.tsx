@@ -13,17 +13,17 @@ interface INote {
   createdAt: string,
 }
 
-interface IStates {
+export interface IStates {
   isLoading: boolean,
   notes: INote[],
 }
 
-interface IProps {
+export interface IProps {
   isAuthenticated: boolean,
   userHasAuthenticated: (boolean) => void,
 }
 
-class Home extends Component<IProps, IStates> {
+export class Home extends Component<IProps, IStates> {
   constructor(props) {
     super(props);
 

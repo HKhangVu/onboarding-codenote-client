@@ -121,6 +121,10 @@
       "web.jsx",
       "jsx",
       "node"
+    ],
+    "coverageReporters": [
+      "text",
+      "html"
     ]
   },
   "babel": {

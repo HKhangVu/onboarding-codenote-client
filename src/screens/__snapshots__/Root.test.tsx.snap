@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders root 1`] = `
+<Fragment>
+  <AppliedRoute
+    component={[Function]}
+  />
+  <Switch>
+    <AppliedRoute
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Connect(UnauthenticatedRoute)
+      component={[Function]}
+      exact={true}
+      path="/signup"
+    />
+    <Connect(UnauthenticatedRoute)
+      component={[Function]}
+      exact={true}
+      path="/login"
+    />
+    <Connect(AuthenticatedRoute)
+      component={[Function]}
+      exact={true}
+      path="/notes/new"
+    />
+    <Connect(AuthenticatedRoute)
+      component={[Function]}
+      exact={true}
+      path="/notes/:id"
+    />
+    <Route
+      component={[Function]}
+    />
+  </Switch>
+</Fragment>
+`;
