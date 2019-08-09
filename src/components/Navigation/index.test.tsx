@@ -31,5 +31,5 @@ describe("test Navigation Bar", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	test('logout button', () => {});
+	test('logout button', () => { });
 });
