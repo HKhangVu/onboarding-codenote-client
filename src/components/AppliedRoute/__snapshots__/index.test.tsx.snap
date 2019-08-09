@@ -22,10 +22,3 @@ exports[`test render AppliedRoute renders AppliedRoute do not have props 1`] = `
   render={[Function]}
 />
 `;
-
-exports[`test render AppliedRoute renders AppliedRoute have all params 1`] = `
-<Route
-  path="/cool"
-  render={[Function]}
-/>
-`;
