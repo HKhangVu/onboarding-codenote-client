@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test Navigation Bar render after login 1`] = `
+exports[`Navigation Bar render after login 1`] = `
 <Provider
   store={
     Object {
@@ -23,7 +23,7 @@ exports[`test Navigation Bar render after login 1`] = `
           "entries": Array [
             Object {
               "hash": "",
-              "key": "97va6r",
+              "key": "6ayk4s",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -37,7 +37,7 @@ exports[`test Navigation Bar render after login 1`] = `
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "97va6r",
+            "key": "6ayk4s",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -47,8 +47,13 @@ exports[`test Navigation Bar render after login 1`] = `
         }
       }
     >
-      <Connect(Navigation)>
+      <Connect(Navigation)
+        history={Object {}}
+        isAuthenticated={true}
+        userHasAuthenticated={[Function]}
+      >
         <Navigation
+          history={Object {}}
           isAuthenticated={true}
           userHasAuthenticated={[Function]}
         >
@@ -209,7 +214,7 @@ exports[`test Navigation Bar render after login 1`] = `
 </Provider>
 `;
 
-exports[`test Navigation Bar render not login 1`] = `
+exports[`Navigation Bar render without login 1`] = `
 <Provider
   store={
     Object {
@@ -232,7 +237,7 @@ exports[`test Navigation Bar render not login 1`] = `
           "entries": Array [
             Object {
               "hash": "",
-              "key": "at2gwa",
+              "key": "vv0kor",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -246,7 +251,7 @@ exports[`test Navigation Bar render not login 1`] = `
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "at2gwa",
+            "key": "vv0kor",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -256,8 +261,13 @@ exports[`test Navigation Bar render not login 1`] = `
         }
       }
     >
-      <Connect(Navigation)>
+      <Connect(Navigation)
+        history={Object {}}
+        isAuthenticated={true}
+        userHasAuthenticated={[Function]}
+      >
         <Navigation
+          history={Object {}}
           isAuthenticated={false}
           userHasAuthenticated={[Function]}
         >

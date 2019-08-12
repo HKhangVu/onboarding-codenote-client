@@ -1,24 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test render AppliedRoute renders AppliedRoute Home do not have rest 1`] = `
+exports[`AppliedRoute renders with only Navigation component 1`] = `
 <Route
   render={[Function]}
 />
 `;
 
-exports[`test render AppliedRoute renders AppliedRoute Navigation only have component 1`] = `
-<Route
-  render={[Function]}
-/>
-`;
-
-exports[`test render AppliedRoute renders AppliedRoute do not have props 1`] = `
+exports[`AppliedRoute renders without param props 1`] = `
 <Route
   a={
     Object {
       "message": "some message",
     }
   }
+  render={[Function]}
+/>
+`;
+
+exports[`AppliedRoute renders without param rest 1`] = `
+<Route
   render={[Function]}
 />
 `;

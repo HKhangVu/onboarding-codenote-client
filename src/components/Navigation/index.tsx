@@ -14,11 +14,12 @@ interface IProps {
   isAuthenticated: boolean,
 }
 
-class Navigation extends React.Component<IProps> {
-  handleLogout = async () => {
+export class Navigation extends React.Component<IProps> {
+ handleLogout = async () => {
     await Auth.signOut();
     this.props.userHasAuthenticated(false);
     this.props.history.push('/login');
+    console.log("called");
   }
 
   render() {
