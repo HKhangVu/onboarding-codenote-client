@@ -28,8 +28,8 @@ const UnauthenticatedRoute = ({ component: C, isAuthenticated, ...rest }) => {
           !isAuthenticated
             ? <C {...props} />
             : <Redirect
-                to={redirect === "" || redirect === null ? "/" : redirect}
-              />
+              to={redirect === "" || redirect === null ? "/" : redirect}
+            />
         )
       }}
     />
