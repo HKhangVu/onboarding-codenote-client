@@ -7,8 +7,8 @@ import Navigation from '../Navigation';
 import store from '../../store';
 import AppliedRoute from './index';
 
-describe("test render AppliedRoute", () => {
-  test('renders AppliedRoute have all params', () => {
+describe("AppliedRoute", () => {
+  test('renders with all params', () => {
     let rest: { [index: string]: string } = {}
     rest['path'] = "/";
     const wrapper = mount(
@@ -21,19 +21,19 @@ describe("test render AppliedRoute", () => {
     expect(wrapper.find(Home)).toHaveLength(1);
   });
 
-  test('renders AppliedRoute do not have props', () => {
+  test('renders without param props', () => {
     let rest: { [index: string]: { message: string } } = {}
     rest['a'] = { message: 'some message' };
     const wrapper = shallow(<AppliedRoute component={Home} {...rest} />);
     expect(wrapper).toMatchSnapshot();
   });
 
-  test('renders AppliedRoute Home do not have rest', () => {
+  test('renders without param rest', () => {
     const wrapper = shallow(<AppliedRoute component={Home} props={new Object()} />);
     expect(wrapper).toMatchSnapshot();
   });
 
-  test('renders AppliedRoute Navigation only have component', () => {
+  test('renders with only Navigation component', () => {
     const wrapper = shallow(<AppliedRoute component={Navigation} />);
     expect(wrapper).toMatchSnapshot();
   });

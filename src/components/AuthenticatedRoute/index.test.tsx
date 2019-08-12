@@ -7,8 +7,8 @@ import NewNote from '../../screens/NewNote';
 import store from '../../store';
 import { userHasAuthenticated } from '../../actions/authenticate';
 
-describe("test render AuthenticatedRoute", () => {
-  test('renders AuthenticatedRoute have isAuthenticated true', () => {
+describe("AuthenticatedRoute", () => {
+  test('renders with authentication', () => {
     store.dispatch(userHasAuthenticated(true));
     const wrapper = mount(
       <Provider store={store}>
@@ -19,7 +19,7 @@ describe("test render AuthenticatedRoute", () => {
     );
     expect(wrapper.find(NewNote)).toHaveLength(1);
   });
-  test('renders AuthenticatedRoute have isAuthenticated true', () => {
+  test('renders without authentication', () => {
     store.dispatch(userHasAuthenticated(false));
     const wrapper = mount(
       <Provider store={store}>

@@ -6,30 +6,30 @@ import Navigation from '../../components/Navigation';
 import store from '../../store';
 import { userHasAuthenticated } from '../../actions/authenticate';
 
-describe("test Navigation Bar", () => {
-	test('render after login', () => {
-		store.dispatch(userHasAuthenticated(true));
-		const wrapper = mount(
-			<Provider store={store}>
-				<MemoryRouter >
-					<Navigation />
-				</MemoryRouter>
-			</Provider>
-		);
-		expect(wrapper).toMatchSnapshot();
-	});
+describe("Navigation Bar", () => {
+  test('render after login', () => {
+    store.dispatch(userHasAuthenticated(true));
+    const wrapper = mount(
+      <Provider store={store}>
+        <MemoryRouter >
+          <Navigation />
+        </MemoryRouter>
+      </Provider>
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
 
-	test('render not login', () => {
-		store.dispatch(userHasAuthenticated(false));
-		const wrapper = mount(
-			<Provider store={store}>
-				<MemoryRouter >
-					<Navigation />
-				</MemoryRouter> ̰
+  test('render without login', () => {
+    store.dispatch(userHasAuthenticated(false));
+    const wrapper = mount(
+      <Provider store={store}>
+        <MemoryRouter >
+          <Navigation />
+        </MemoryRouter> ̰
 			</Provider>
-		);
-		expect(wrapper).toMatchSnapshot();
-	});
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
 
-	test('logout button', () => { });
+  test('logout button', () => { });
 });
