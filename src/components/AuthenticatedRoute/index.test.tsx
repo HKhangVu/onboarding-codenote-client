@@ -8,26 +8,26 @@ import store from '../../store';
 import { userHasAuthenticated } from '../../actions/authenticate';
 
 describe("test render AuthenticatedRoute", () => {
-	test('renders AuthenticatedRoute have isAuthenticated true', () => {
-		store.dispatch(userHasAuthenticated(true));
-		const wrapper = mount(
-			<Provider store={store}>
-				<MemoryRouter initialEntries={['/notes/new']}>
-					<AuthenticatedRoute component={NewNote} />
-				</MemoryRouter>
-			</Provider>
-		);
-		expect(wrapper.find(NewNote)).toHaveLength(1);
-	});
-	test('renders AuthenticatedRoute have isAuthenticated true', () => {
-		store.dispatch(userHasAuthenticated(false));
-		const wrapper = mount(
-			<Provider store={store}>
-				<MemoryRouter initialEntries={['/notes/new']}>
-					<AuthenticatedRoute component={NewNote} />
-				</MemoryRouter>
-			</Provider>
-		);
-		expect(wrapper.find("Redirect")).toHaveLength(1);
-	});
+  test('renders AuthenticatedRoute have isAuthenticated true', () => {
+    store.dispatch(userHasAuthenticated(true));
+    const wrapper = mount(
+      <Provider store={store}>
+        <MemoryRouter initialEntries={['/notes/new']}>
+          <AuthenticatedRoute component={NewNote} />
+        </MemoryRouter>
+      </Provider>
+    );
+    expect(wrapper.find(NewNote)).toHaveLength(1);
+  });
+  test('renders AuthenticatedRoute have isAuthenticated true', () => {
+    store.dispatch(userHasAuthenticated(false));
+    const wrapper = mount(
+      <Provider store={store}>
+        <MemoryRouter initialEntries={['/notes/new']}>
+          <AuthenticatedRoute component={NewNote} />
+        </MemoryRouter>
+      </Provider>
+    );
+    expect(wrapper.find("Redirect")).toHaveLength(1);
+  });
 });

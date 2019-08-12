@@ -25,7 +25,7 @@ describe("test Navigation Bar", () => {
 			<Provider store={store}>
 				<MemoryRouter >
 					<Navigation />
-				</MemoryRouter>
+				</MemoryRouter> ̰
 			</Provider>
 		);
 		expect(wrapper).toMatchSnapshot();
