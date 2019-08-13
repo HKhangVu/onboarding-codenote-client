@@ -1,12 +1,11 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { MemoryRouter } from 'react-router'
-import { Provider } from 'react-redux';
-import { NavItem} from "react-bootstrap";
-import { History } from 'history';
+import {mount} from 'enzyme';
+import {MemoryRouter} from 'react-router'
+import {Provider} from 'react-redux';
+import {History} from 'history';
 import Navigation from '../../components/Navigation';
 import store from '../../store';
-import { userHasAuthenticated } from '../../actions/authenticate';
+import {userHasAuthenticated} from '../../actions/authenticate';
 
 describe("Navigation Bar", () => {
   test('render after login', () => {
@@ -14,7 +13,8 @@ describe("Navigation Bar", () => {
     const wrapper = mount(
       <Provider store={store}>
         <MemoryRouter >
-          <Navigation history={new Object as History} isAuthenticated userHasAuthenticated={(val:true)=>{}} />
+          <Navigation history={{} as History} isAuthenticated userHasAuthenticated={() => {
+          }}/>
         </MemoryRouter>
       </Provider>
     );
@@ -26,10 +26,12 @@ describe("Navigation Bar", () => {
     const wrapper = mount(
       <Provider store={store}>
         <MemoryRouter >
-          <Navigation history={new Object as History} isAuthenticated userHasAuthenticated={(val:true)=>{}}/>
+          <Navigation history={{} as History} isAuthenticated userHasAuthenticated={() => {
+          }}/>
         </MemoryRouter>
       </Provider>
     );
+    console.log(wrapper.debug());
     expect(wrapper).toMatchSnapshot();
   });
     
@@ -42,14 +44,10 @@ describe("Navigation Bar", () => {
           <Navigation {...iprop} />
         </MemoryRouter>
       </Provider>
-    ); 
-    const navInstance = wrapper.find(NavItem);
-    navInstance.props().onClick = jest.fn();
-    wrapper.instance().forceUpdate();
-    const logoutBtn = wrapper.find(NavItem).find('a');
-    navInstance.props().onClick();
-    // navInstance.instance().handleLogout();
-    // logoutBtn.props().onClick();
-    expect( navInstance.props().onClick).toHaveBeenCalled();
+    );
+    const spy = jest.spyOn(wrapper.find(Navigation).children().instance(), 'handleLogout');
+    wrapper.find(Navigation).children().instance().handleLogout();
+    expect(spy).toHaveBeenCalled();
+    spy.mockRestore();
   });
 });

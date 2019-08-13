@@ -23,7 +23,7 @@ exports[`Navigation Bar render after login 1`] = `
           "entries": Array [
             Object {
               "hash": "",
-              "key": "6ayk4s",
+              "key": "z76nmo",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -37,7 +37,7 @@ exports[`Navigation Bar render after login 1`] = `
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "6ayk4s",
+            "key": "z76nmo",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -237,7 +237,7 @@ exports[`Navigation Bar render without login 1`] = `
           "entries": Array [
             Object {
               "hash": "",
-              "key": "vv0kor",
+              "key": "e7rwh5",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -251,7 +251,7 @@ exports[`Navigation Bar render without login 1`] = `
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "vv0kor",
+            "key": "e7rwh5",
             "pathname": "/",
             "search": "",
             "state": undefined,
