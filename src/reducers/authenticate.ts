@@ -1,10 +1,10 @@
 import { actionTypes } from '../actions/authenticate';
 
-interface IStates {
+export interface IStates {
   isAuthenticated: boolean,
 }
 
-interface IActions {
+export interface IActions {
   type: string,
   payload: Object,
 }

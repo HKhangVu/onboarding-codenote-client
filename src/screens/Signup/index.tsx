@@ -19,8 +19,8 @@ interface IStates {
   newUser: null | Object,
 }
 
-interface IProps {
-  userHasAuthenticated: (boolean) => void,
+export interface IProps {
+  userHasAuthenticated: (bool:boolean) => void,
   history: History,
 }
 

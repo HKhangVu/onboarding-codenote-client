@@ -9,9 +9,9 @@ const AuthenticatedRoute = ({ component: C, isAuthenticated, ...rest }) =>
       isAuthenticated
         ? <C {...props} />
         : <Redirect
-            to={`/login?redirect=${props.location.pathname}${props.location
-              .search}`}
-          />}
+          to={`/login?redirect=${props.location.pathname}${props.location
+            .search}`}
+        />}
   />;
 
 const mapStateToProps = (state) => ({

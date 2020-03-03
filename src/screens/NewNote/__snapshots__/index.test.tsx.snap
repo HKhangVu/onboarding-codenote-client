@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render new note 1`] = `
+<NewNote
+  history={Object {}}
+>
+  <div
+    className="NewNote"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <FormGroup
+        bsClass="form-group"
+        controlId="content"
+      >
+        <div
+          className="form-group"
+        >
+          <FormControl
+            bsClass="form-control"
+            componentClass="textarea"
+            onChange={[Function]}
+            value=""
+          >
+            <textarea
+              className="form-control"
+              id="content"
+              onChange={[Function]}
+              value=""
+            />
+          </FormControl>
+        </div>
+      </FormGroup>
+      <FormGroup
+        bsClass="form-group"
+        controlId="file"
+      >
+        <div
+          className="form-group"
+        >
+          <ControlLabel
+            bsClass="control-label"
+            srOnly={false}
+          >
+            <label
+              className="control-label"
+              htmlFor="file"
+            >
+              Attachment
+            </label>
+          </ControlLabel>
+          <FormControl
+            bsClass="form-control"
+            componentClass="input"
+            onChange={[Function]}
+            type="file"
+          >
+            <input
+              className=""
+              id="file"
+              onChange={[Function]}
+              type="file"
+            />
+          </FormControl>
+        </div>
+      </FormGroup>
+      <LoaderButton
+        block={true}
+        bsSize="large"
+        bsStyle="primary"
+        disabled={true}
+        isLoading={false}
+        loadingText="Creating…"
+        text="Create"
+        type="submit"
+      >
+        <Button
+          active={false}
+          block={true}
+          bsClass="btn"
+          bsSize="large"
+          bsStyle="primary"
+          className="LoaderButton "
+          disabled={true}
+          type="submit"
+        >
+          <button
+            className="LoaderButton  btn btn-lg btn-primary btn-block"
+            disabled={true}
+            type="submit"
+          >
+            Create
+          </button>
+        </Button>
+      </LoaderButton>
+    </form>
+  </div>
+</NewNote>
+`;

@@ -84,7 +84,9 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
-      "!src/**/*.d.ts"
+      "!src/**/*.d.ts",
+      "!src/serviceWorker.ts",
+      "!src/libs/*.ts"
     ],
     "resolver": "jest-pnp-resolver",
     "setupFiles": [
@@ -121,6 +123,10 @@
       "web.jsx",
       "jsx",
       "node"
+    ],
+    "coverageReporters": [
+      "text",
+      "html"
     ]
   },
   "babel": {

@@ -1,8 +1,8 @@
 import React from "react";
-import { connect } from 'react-redux';
-import { Route, Redirect } from "react-router-dom";
+import {connect} from 'react-redux';
+import {Redirect, Route} from "react-router-dom";
 
-const querystring = (name, url = window.location.href) => {
+export const querystring = (name, url = window.location.href) => {
   name = name.replace(/[[]]/g, "\\$&");
 
   const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)", "i");
@@ -18,8 +18,9 @@ const querystring = (name, url = window.location.href) => {
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-const UnauthenticatedRoute = ({ component: C, isAuthenticated, ...rest }) => {
-  const redirect = querystring("redirect");
+const UnauthenticatedRoute = ({component: C, isAuthenticated, redirect: redi, ...rest}) => {
+
+  const redirect = querystring("redirect", redi);
   return (
     <Route
       {...rest}
@@ -28,8 +29,8 @@ const UnauthenticatedRoute = ({ component: C, isAuthenticated, ...rest }) => {
           !isAuthenticated
             ? <C {...props} />
             : <Redirect
-                to={redirect === "" || redirect === null ? "/" : redirect}
-              />
+              to={redirect === "" || redirect === null ? "/" : redirect}
+            />
         )
       }}
     />
